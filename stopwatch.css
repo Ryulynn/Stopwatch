@@ -1,0 +1,39 @@
+.stopwatch{
+  width:400px;
+}
+
+.counter_display{
+  width:100%;
+  height:50px;
+  background-color:black;
+  margin-right:20px;
+  margin-top:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.counter_display p{
+  color:white;
+  letter-spacing:10px;
+  color:#00ff00;
+}
+
+.counter_display span{
+  font-size:30px;
+}
+
+.button_div{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  margin-top:50px;
+}
+
+.button{
+  width:calc(100% / 3);
+  margin:0 10px;
+  height:50px;
+  font-size:20px;
+  cursor:pointer;
+}
