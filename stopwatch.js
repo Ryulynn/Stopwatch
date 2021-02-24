@@ -49,15 +49,19 @@ $(document).ready(function(){
   
   var setInterval_countup = "Global"
   
-  $(".button_start").click(function(){//スタート時の処理
+  $(".button_start").click(function(){//スタートボタンの処理
     setInterval_countup = setInterval(countUp,10);
+    $(".button_start").addClass("button_out");
+    $(".button_stop, .button_reset").removeClass("button_out");
   });
   
-  $(".button_stop").click(function(){
-    clearInterval(setInterval_countup);
+  $(".button_stop").click(function(){//ストップボタンの処理
+    clearInterval(setInterval_countup);//<欠陥>10ms以下の時間でスタートストップを押した場合カウントは進まなくなる。
+    $(".button_start").removeClass("button_out");
+    $(".button_stop").addClass("button_out");
   });
   
-  $(".button_reset").click(function(){
+  $(".button_reset").click(function(){//リセットボタンの処理
     clearInterval(setInterval_countup);
     count_basis = 0;//基準(0.01s)
     count_centi_sec = 0;//0.01sの位
@@ -66,6 +70,8 @@ $(document).ready(function(){
     count_deca_sec = 0;//10sの位
     count_min = 0;//1minの位
     count_deca_min = 0;//10minの位
-    $(".centi-seconds, .deci-seconds, .seconds, .deca-seconds, .minutes, .deca-minutes").text(count_basis)
+    $(".centi-seconds, .deci-seconds, .seconds, .deca-seconds, .minutes, .deca-minutes").text(count_basis);
+    $(".button_start").removeClass("button_out");
+    $(".button_stop, .button_reset").addClass("button_out");
   });
 });

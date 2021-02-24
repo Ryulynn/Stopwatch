@@ -37,3 +37,9 @@
   font-size:20px;
   cursor:pointer;
 }
+
+.button_out{
+  opacity:0.3;
+  cursor:default;
+  pointer-events:none;
+}
